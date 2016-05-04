@@ -1,0 +1,16 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let room of rooms | async">
+      <td>{{room.roomName}}</td>
+      <td>{{room.roomCapacity}}</td>
+      <td>{{room.roomDescription}}</td>
+    </tr>
+  </tbody>
+</table>

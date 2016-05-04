@@ -4,7 +4,18 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/']">Home</a>
       </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Rooms
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu menu">
+          <li><a [routerLink]="['/rooms']">Index</a></li>
+        </ul>
+      </li>
     </ul>
+
     <ul class="pull-right nav navbar-nav">
       <li>
         <a [routerLink]="['/about']">About</a>
