@@ -1,0 +1,11 @@
+build:
+  image: node:4.0
+  commands:
+    - node -v
+    - npm -v
+    - npm install --quiet
+    - npm run typings install
+    - npm run tsc
+cache:
+  mount:
+    - node_modules
