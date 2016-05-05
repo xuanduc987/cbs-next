@@ -1,3 +1,5 @@
+[![Build Status](https://github.ci.xsoftvn.com/api/badges/xuanduc987/cbs-next/status.svg)](https://github.ci.xsoftvn.com/xuanduc987/cbs-next)
+
 # CBS next
 > Next-gen Conference room Booking Service
 
