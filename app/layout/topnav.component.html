@@ -14,11 +14,29 @@
           <li><a [routerLink]="['/rooms']">Index</a></li>
         </ul>
       </li>
+
+      <li>
+        <a [routerLink]="['/about']">About</a>
+      </li>
     </ul>
 
     <ul class="pull-right nav navbar-nav">
-      <li>
-        <a [routerLink]="['/about']">About</a>
+      <li *ngIf="auth.currentUser | async" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          {{(auth.currentUser | async).name}}<b class="caret"></b>
+          <span id="avatar">
+            <img alt="avatar" src= "{{(auth.currentUser | async).profileImageUrl}}" width= "35" height= "35" />
+          </span>
+        </a>
+        <ul class="dropdown-menu menu">
+          <li>
+            <a href="" (click)="onClickLogout($event)">Logout</a>
+          </li>
+        </ul>
+      </li>
+
+      <li *ngIf="!(auth.currentUser | async)">
+        <a href="" (click)="onClickLogin($event)">Login</a>
       </li>
     </ul>
   </nav>

@@ -8,6 +8,7 @@ import {TopnavComponent} from './layout';
 import {RoomComponent} from './room/room.component';
 
 import {RoomService} from './room/room.service';
+import {AuthService} from './auth/auth.service';
 
 import C from './constants/firebase';
 
@@ -19,7 +20,8 @@ import C from './constants/firebase';
     ROUTER_PROVIDERS,
     FIREBASE_PROVIDERS,
     defaultFirebase(C.FIREBASE_URI),
-    RoomService
+    RoomService,
+    AuthService,
   ]
 })
 @Routes([
