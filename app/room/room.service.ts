@@ -5,9 +5,9 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 @Injectable()
 export class RoomService {
 
-  constructor(private af: AngularFire) {}
+  constructor(private _af: AngularFire) {}
 
-  getAll(): FirebaseListObservable<any[]> {
-    return this.af.list('/rooms');
+  public getAll(): FirebaseListObservable<any[]> {
+    return this._af.list('/rooms');
   }
 }

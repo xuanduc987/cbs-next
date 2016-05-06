@@ -6,7 +6,9 @@ import {RoomService} from './room.service';
   templateUrl: 'app/room/room.component.html'
 })
 export class RoomComponent {
-  rooms = this._roomService.getAll();
+  public rooms;
 
-  constructor(private _roomService: RoomService) {}
+  constructor(private _roomService: RoomService) {
+    this.rooms = this._roomService.getAll();
+  }
 }
