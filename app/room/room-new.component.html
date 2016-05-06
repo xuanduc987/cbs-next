@@ -1,0 +1,5 @@
+<div *ngIf="errorMessages" class="alert alert-danger">
+  {{errorMessages}}
+</div>
+
+<cbs-room-form (onSubmit)="addRoom()" [room]="room" [submitText]="'Create'"></cbs-room-form>
