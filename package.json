@@ -7,7 +7,8 @@
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "lint": "tslint app/**/*.ts"
   },
   "license": "ISC",
   "dependencies": {
@@ -31,8 +32,10 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "codelyzer": "0.0.19",
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
+    "tslint": "^3.9.0",
     "typescript": "^1.8.10",
     "typings": "^0.8.1"
   }

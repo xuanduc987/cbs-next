@@ -6,6 +6,8 @@ build:
     - npm install --quiet
     - npm run typings install
     - npm run tsc
+    - npm run lint
 cache:
   mount:
     - node_modules
+    - typings
