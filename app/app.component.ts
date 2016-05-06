@@ -5,7 +5,8 @@ import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
 import {HomeComponent} from './static/home.component';
 import {AboutComponent} from './static/about.component';
 import {TopnavComponent} from './layout';
-import {RoomComponent} from './room/room.component';
+import {RoomIndexComponent} from './room/room-index.component';
+import {RoomNewComponent} from './room/room-new.component';
 
 import {RoomService} from './room/room.service';
 import {AuthService} from './auth/auth.service';
@@ -27,7 +28,8 @@ import C from './constants/firebase';
 @Routes([
   {path: '/', component: HomeComponent},
   {path: '/about', component: AboutComponent},
-  {path: '/rooms', component: RoomComponent},
+  {path: '/rooms/new', component: RoomNewComponent},
+  {path: '/rooms', component: RoomIndexComponent},
 ])
 export class AppComponent {
   // need to inject router for initial routing
