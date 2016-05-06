@@ -1,14 +1,13 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
-import {DataService} from '../core/data.service';
 
 @Injectable()
 export class RoomService {
 
-  constructor(private _dataService: DataService) {}
+  constructor(private af: AngularFire) {}
 
-  getRooms(): Observable<any[]> {
-    return this._dataService.list('rooms');
+  getAll(): FirebaseListObservable<any[]> {
+    return this.af.list('/rooms');
   }
 }
