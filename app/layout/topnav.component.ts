@@ -11,12 +11,12 @@ import {AuthService} from '../auth/auth.service';
 export class TopnavComponent {
   constructor(public auth: AuthService) {}
 
-  public onClickLogin(event) {
+  onClickLogin(event) {
     event.preventDefault();
     this.auth.login();
   }
 
-  public onClickLogout(event) {
+  onClickLogout(event) {
     event.preventDefault();
     this.auth.logout();
   }

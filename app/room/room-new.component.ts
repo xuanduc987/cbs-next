@@ -10,14 +10,14 @@ import {RoomFormComponent} from './room-form.component';
   directives: [RoomFormComponent]
 })
 export class RoomNewComponent {
-  public room = new Room();
-  public errorMessages: string;
+  room = new Room();
+  errorMessages: string;
 
-  constructor(private _roomService: RoomService, private _router: Router) {}
+  constructor(private roomService: RoomService, private router: Router) {}
 
-  public addRoom() {
-    this._roomService.add(this.room).then(() => {
-      this._router.navigate(['/rooms']);
+  addRoom() {
+    this.roomService.add(this.room).then(() => {
+      this.router.navigate(['/rooms']);
     }).catch((e) => {
       this.errorMessages = e.message;
     });

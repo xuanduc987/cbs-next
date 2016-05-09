@@ -7,15 +7,15 @@ import {Room} from './room';
 @Injectable()
 export class RoomService {
   constructor(
-    private _af: AngularFire,
-    @Inject(FirebaseRef) private _ref: Firebase) {}
+    private af: AngularFire,
+    @Inject(FirebaseRef) private ref: Firebase) {}
 
-  public list(): FirebaseListObservable<Room[]> {
-    return this._af.list('/rooms');
+  list(): FirebaseListObservable<Room[]> {
+    return this.af.list('/rooms');
   }
 
-  public add(room: Room): Promise<void> {
-    let roomRef = this._ref.child(`rooms/${room.roomName}`);
+  add(room: Room): Promise<void> {
+    let roomRef = this.ref.child(`rooms/${room.roomName}`);
 
     return roomRef.once('value').then(snap => {
       if (snap.val()) {

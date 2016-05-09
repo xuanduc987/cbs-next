@@ -7,14 +7,11 @@ import {Room} from './room';
   templateUrl: 'app/room/room-form.component.html'
 })
 export class RoomFormComponent {
-  @Input()
-  public room: Room;
-  @Input()
-  public submitText: string;
-  @Output()
-  public onSubmit = new EventEmitter();
+  @Input() room: Room;
+  @Input() submitText: string;
+  @Output() submit = new EventEmitter();
 
-  public fireSubmit() {
-    this.onSubmit.emit(null);
+  onSubmit() {
+    this.submit.emit(null);
   }
 }

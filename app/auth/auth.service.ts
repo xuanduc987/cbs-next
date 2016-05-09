@@ -11,10 +11,10 @@ import {User} from './user';
 
 @Injectable()
 export class AuthService {
-  public currentUser: Observable<User>;
+  currentUser: Observable<User>;
 
-  constructor(private _auth: FirebaseAuth) {
-    this.currentUser = this._auth.map((authState: FirebaseAuthState) => {
+  constructor(private auth: FirebaseAuth) {
+    this.currentUser = this.auth.map((authState: FirebaseAuthState) => {
       if (!authState) return authState;
 
       switch (authState.provider) {
@@ -30,8 +30,8 @@ export class AuthService {
   }
 
 
-  public login() {
-    this._auth.login({
+  login() {
+    this.auth.login({
       provider: AuthProviders.Google,
       method: AuthMethods.Popup,
       remember: 'default',
@@ -39,7 +39,7 @@ export class AuthService {
     });
   }
 
-  public logout() {
-    this._auth.logout();
+  logout() {
+    this.auth.logout();
   }
 }
