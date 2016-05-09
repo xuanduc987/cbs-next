@@ -1,14 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {RoomService} from './room.service';
 
 @Component({
   templateUrl: 'app/room/room.component.html'
 })
-export class RoomIndexComponent {
-  public rooms;
+export class RoomIndexComponent implements OnInit {
+  rooms;
 
-  constructor(private _roomService: RoomService) {
-    this.rooms = this._roomService.list();
+  constructor(private roomService: RoomService) {}
+
+  ngOnInit() {
+    this.rooms = this.roomService.list();
   }
 }
